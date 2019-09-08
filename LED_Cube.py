@@ -16,11 +16,22 @@ GPIO.setup([5, 6, 13, 19], GPIO.OUT, initial=GPIO.LOW)
 column = [14, 15, 18, 23, 24, 25, 8, 7, 12, 16, 20, 21, 4, 17, 27, 22]
 row = [5, 6, 13, 19]
 
+#Outer shell, then core
+for i in range(3):
+    #Outer shell
+    for j in range(4):
+        GPIO.output(column[j], 0)
+    for j in range (12, 16):
+        GPIO
+    GPIO.output(row[0], 1)
+    GPIO.output(row[3], 1
+    for k in range 1000):
 
-for i in range (5):
-    for j in range(16):
-        GPIO.output(column[j],0)
-        sleep(0.5)
-        GPIO.output(row[0],1)
+    sleep(0.5)
+    GPIO.output(row[0], 0)
+    GPIO.output(row[3], 0)
+    GPIO.output(row[1], 1)
+    GPIO.output(row[2], 1)
+    sleep(0.5)
 print("done")
 GPIO.cleanup()
