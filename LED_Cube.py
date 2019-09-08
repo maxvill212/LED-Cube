@@ -10,22 +10,25 @@ GPIO.setwarnings(False)
 #Cathode leads
 GPIO.setup([14, 15, 18, 23, 24, 25, 8, 7, 12, 16, 20, 21, 4, 17, 27, 22], GPIO.OUT, initial=GPIO.HIGH)
 #Anode Leads, top to bottom)
-GPIO.setup([5, 6, 13, 19], GPIO.OUT, initial=GPIO.HIGH)
+GPIO.setup([5, 6, 13, 19], GPIO.OUT, initial=GPIO.LOW)
 
 #Declaring columns and rows
 column = [14, 15, 18, 23, 24, 25, 8, 7, 12, 16, 20, 21, 4, 17, 27, 22]
 row = [5, 6, 13, 19]
 
-#GPIO.output(row[0], 1)
-#GPIO.output(column[0], 0)
-#sleep(3)
-
-for i in range (4):
+#Lights up 1 corner in water drop pattern 4 times
+for i in range (1):
     for j in range (4):
         GPIO.output(row[j], 1)
         GPIO.output(column[0], 0)
         sleep(0.5)
         GPIO.output(row[j], 0)
-#GPIO.output(columns[1], 0)
+
+
+for i in range (5):
+    for j in range(16):
+        GPIO.output(column[j],0)
+        sleep(0.5)
+        GPIO.output(row[0],1)
 print("done")
 GPIO.cleanup()
