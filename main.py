@@ -3,7 +3,8 @@ from patterns import *
 
 # Main program
 reset()
-for i in range(4):
-    grow2d(1)
-    shrink2d(1)
+for i in range(1):
+    grow2d(1, 0.08)
+    shrink2d(1, 0.08)
+rain(5, 0.2)
 cleanup()

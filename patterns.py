@@ -1,3 +1,6 @@
+# cyc is the amount of cycles the user inputs
+# spd is the duration of sleep by user input
+
 import RPi.GPIO as gpio
 from time import sleep
 import random
@@ -32,34 +35,34 @@ def cleanup():
    gpio.cleanup()
 
 # Grows squarre from top right down
-def grow2d(cyc):
+def grow2d(cyc, spd):
     for i in range(cyc):
         for j in range(4):
             out(column[j], 0)
             out(column[j+12], 0)
             out(row[j], 1)
-            sleep(0.5)
+            sleep(spd)
 
 # Opposite of grow()
-def shrink2d(cyc):
+def shrink2d(cyc, spd):
         for j in range(4):
             out(column[j], 0)
             out(column[j+12], 0)
             out(row[j], 1)
-        for j in range(4):
+        for j in range(3):
             out(column[3-j], 1)
             out(column[15-j], 1)
             out(row[3-j], 0)
-            sleep(0.5)
+            sleep(spd)
 
 # Rain at random points on the grid
 # cyc in the input from user for how many cycles
-def rain(cyc):
+def rain(cyc, spd):
     for i in range(cyc):
         reset()
         out(random.choice(column), 0)
         for j in range(4):
             out(row[j], 1)
-            sleep(0.2)
+            sleep(spd)
             out(row[j], 0)
 
