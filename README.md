@@ -16,4 +16,4 @@ Got a Raspberry Pi and wanted to re-create the project that really got me intere
 * 4x4x4 LED cube (lots of tutorial on how to make your own online)
 * Raspberry Pi (I have 4 model B but it doesn't matter)
 * The right connections to the GPIO pins, click [here](GPIO_plugin.txt)
-	Note: Make sure the cathodes (negative/short leads) are pointed down
+	* Note: Make sure the cathodes (negative/short leads) are pointed down

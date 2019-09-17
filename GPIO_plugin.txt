@@ -1,5 +1,6 @@
 This explains where all the GPIO pins are connected to the cube
-It will be documented as BCM standard
+It's documented as BCM standard
 
 The columns (up/down) are setup from back to front, left to right
 (The front/back doesn't matter much, as long as you go left to right)
+
